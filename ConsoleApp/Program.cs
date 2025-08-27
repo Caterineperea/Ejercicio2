@@ -2,7 +2,8 @@
 Console.WriteLine("Hello, World!");
 
 //Pantalones se pede convertir en una prenda, ya que hereda de esta clase
-//Prendas prenda = new Pantalones();
+//Prendas prenda1 = new Pantalones();
+//Prendas prenda2 = new Prendas();
 var prenda = new Prendas(); 
 prenda.Id = 1;
 prenda.Nombre = "Carmen";
@@ -26,6 +27,7 @@ public class Tipos
 {
     public int Id = 0;
     public String? Nombre = "";
+    public List<Prendas> Prendas = new List<Prendas>(); //plural lista de arreglos
 }
 
 public class Tallas
@@ -45,8 +47,18 @@ public class Prendas
     public List<Tallas> Tallas = new List<Tallas>(); //plural lista de arreglos
 }
 
-public class Pantalones : Prendas
+
+public interface IPrendas
+{
+
+}
+
+public class Pantalones : Prendas, IPrendas //Pantalones hereda e implementa los métodos de la interface
 {
     //public int Id = 0;
     public bool Destroyer = false;
+    public void Botones()
+    {
+
+    }
 }
